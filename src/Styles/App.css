@@ -19,7 +19,7 @@ body {
 
 .view-wrapper {
   background-color: #f1f2f6;
-  height: 1000px;
+  height: 1200px;
   padding: 0;
 }
 
@@ -118,5 +118,32 @@ body {
   font-size: 30px;
   font-weight: lighter;
 }
+.calendar-wrapper .rc-calendar-selected-date .rc-calendar-date {
+  background-color: #f9686f;
+}
+.calendar-wrapper .rc-calendar-selected-date .rc-calendar-date:hover {
+  background: #f9686f;
+}
 
-/*# sourceMappingURL=app.css.map */
+.add-weight-button {
+  width: 100%;
+  margin-top: 90px;
+  height: 200px;
+}
+.add-weight-button button {
+  width: 100px;
+  height: 100px;
+  background-color: #f9686f;
+  margin: auto;
+  border-radius: 50%;
+  display: block;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.add-weight-button button i {
+  color: white;
+  font-size: 2rem;
+}
+
+/*# sourceMappingURL=App.css.map */

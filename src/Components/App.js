@@ -4,6 +4,7 @@ import "rc-calendar/assets/index.css";
 import TitleBar from "./TitleBar";
 import WeightTile from "./WeightTile";
 import Calendar from "rc-calendar";
+import Menu from "./Menu";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <div className="calendar-wrapper">
           <Calendar showWeekNumber={false} />
         </div>
+        <Menu />
       </div>
     );
   }
