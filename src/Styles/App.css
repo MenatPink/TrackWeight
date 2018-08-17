@@ -17,6 +17,12 @@ body {
   font-weight: lighter;
 }
 
+.view-wrapper {
+  background-color: #f1f2f6;
+  height: 1000px;
+  padding: 0;
+}
+
 .weight-tile {
   background-color: white;
   height: 140px;
@@ -42,6 +48,74 @@ body {
   transform: translateY(-50%);
   right: 40px;
   margin: 0;
+  font-weight: lighter;
+}
+
+.calendar-wrapper {
+  margin-top: 40px;
+}
+.calendar-wrapper .rc-calendar {
+  width: 85%;
+  height: 480px;
+  margin: auto;
+  display: block;
+  border-radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: bolder;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+.calendar-wrapper .rc-calendar-header {
+  padding: 11px 238px;
+  height: 60px;
+  border: none;
+}
+.calendar-wrapper .rc-calendar-body {
+  height: auto;
+}
+.calendar-wrapper .rc-calendar-my-select a {
+  font-size: 25px;
+  font-weight: lighter;
+}
+.calendar-wrapper .rc-calendar-input-wrap {
+  border: none;
+  height: 40px;
+}
+.calendar-wrapper .rc-calendar-input-wrap .rc-calendar-date-input-wrap {
+  height: inherit;
+}
+.calendar-wrapper .rc-calendar-input-wrap .rc-calendar-date-input-wrap .rc-calendar-input {
+  height: inherit;
+  font-size: 25px;
+  padding-left: 50px;
+  background-color: transparent;
+}
+.calendar-wrapper .rc-calendar-input-wrap .rc-calendar-clear-btn {
+  top: 10px;
+  right: 71px;
+  height: 30px;
+}
+.calendar-wrapper .rc-calendar-input-wrap .rc-calendar-clear-btn:after {
+  font-size: 24px;
+  height: inherit;
+}
+.calendar-wrapper .rc-calendar-column-header-inner {
+  font-size: 21px;
+}
+.calendar-wrapper .rc-calendar-date {
+  border-radius: 50%;
+  font-size: 20px;
+  height: 34px;
+  width: 34px;
+  line-height: 30px;
+}
+.calendar-wrapper .rc-calendar-table tr {
+  height: 45px;
+}
+.calendar-wrapper .rc-calendar-footer {
+  border: none;
+  font-size: 30px;
   font-weight: lighter;
 }
 
