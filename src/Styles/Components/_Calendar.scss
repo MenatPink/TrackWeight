@@ -66,4 +66,10 @@
         font-size: 30px;
         font-weight: lighter;
     }
+    .rc-calendar-selected-date .rc-calendar-date {
+        background-color: $red;
+        &:hover {
+            background: $red;
+        }
+    }
 }
