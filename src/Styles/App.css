@@ -1,10 +1,20 @@
 body {
-  background-color: green;
+  background-color: #e1e4eb;
 }
 
-h1 {
+.title-bar {
+  height: 150px;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: white;
+}
+.title-bar h1 {
+  display: block;
+  width: 100%;
+  padding-top: 40px;
   text-align: center;
-  margin-top: 20px;
+  font-weight: lighter;
 }
 
 /*# sourceMappingURL=App.css.map */
