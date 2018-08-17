@@ -1,0 +1,69 @@
+.calendar-wrapper {
+    margin-top: 40px;
+    .rc-calendar {
+        width: 85%;
+        height: 480px;
+        margin: auto;
+        display: block;
+        border-radius: $default-border-radius;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-weight: bolder;
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+    }
+    .rc-calendar-header {
+        padding: 11px 238px;
+        height: 60px;
+        border: none;
+    }
+    .rc-calendar-body {
+        height: auto;
+    }
+    .rc-calendar-my-select a {
+        font-size: 25px;
+        font-weight: lighter;
+    }
+    .rc-calendar-input-wrap {
+        border: none;
+        height: 40px;
+        .rc-calendar-date-input-wrap {
+            height: inherit;
+            .rc-calendar-input {
+                height: inherit;
+                font-size: 25px;
+                padding-left: 50px;
+                background-color: transparent;
+            }
+        }
+        .rc-calendar-clear-btn {
+            top: 10px;
+            right: 71px;
+            height: 30px;
+        }
+        .rc-calendar-clear-btn:after {
+            font-size: 24px;
+            height: inherit;
+        }
+    }
+    .rc-calendar-column-header-inner {
+        font-size: 21px;
+    }
+    .rc-calendar-date {
+        border-radius: 50%;
+        font-size: 20px;
+        height: 34px;
+        width: 34px;
+        line-height: 30px;
+    }
+    .rc-calendar-table {
+        tr {
+            height: 45px;
+        }
+    }
+    .rc-calendar-footer {
+        border: none;
+        font-size: 30px;
+        font-weight: lighter;
+    }
+}
