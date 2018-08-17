@@ -4,7 +4,11 @@ import TitleBar from "./TitleBar";
 
 class App extends Component {
   render() {
-    return <TitleBar />;
+    return (
+      <div class="container view-wrapper">
+        <TitleBar />
+      </div>
+    );
   }
 }
 

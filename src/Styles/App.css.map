@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["components/_titlebar.scss"],"names":[],"mappings":"AAAA;EACI;;;AAGJ;EACI;EACA","file":"App.css"}
+{"version":3,"sourceRoot":"","sources":["global/_normalize.scss","global/_colors.scss","components/_titlebar.scss","global/_defaults.scss"],"names":[],"mappings":"AAAA;EACI,kBCDQ;;;ACAZ;EACI;EACA;EACA,2BCFoB;EDGpB,4BCHoB;EDIpB;;AACA;EACI;EACA;EACA;EACA;EACA","file":"App.css"}
