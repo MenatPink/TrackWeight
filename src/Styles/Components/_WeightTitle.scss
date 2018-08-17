@@ -1,0 +1,27 @@
+.weight-tile {
+    background-color: white;
+    height: 140px;
+    width: 85%;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: $default-border-radius;
+    box-shadow: $default-box-shadow;
+    padding-top: 0.1px;
+    position: relative;
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+        display: block;
+        margin-top: 40px;
+        letter-spacing: 2px;
+    }
+    .units {
+        color: lightgrey;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 40px;
+        margin: 0;
+        font-weight: lighter;
+    }
+}
