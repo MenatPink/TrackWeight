@@ -125,11 +125,41 @@ body {
 .calendar-wrapper .rc-calendar-selected-date .rc-calendar-date:hover {
   background: #f9686f;
 }
+.calendar-wrapper .rc-calendar-today-btn {
+  font-weight: lighter;
+  font-size: 20px;
+}
 
 .add-weight-button {
   width: 100%;
-  margin-top: 90px;
-  height: 100px;
+  margin-top: 40px;
+  height: auto;
+}
+.add-weight-button h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: lighter;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
+}
+.add-weight-button h2:hover {
+  color: #3fc7fa;
+}
+.add-weight-button input {
+  width: 0px;
+  height: 50px;
+  border-radius: 10px;
+  border-style: none;
+  margin: auto;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin-bottom: 20px;
+  transition: all 1s ease-in-out;
+  font-size: 1.2rem;
+}
+.add-weight-button input:focus {
+  outline: none;
 }
 .add-weight-button button {
   width: 100px;
@@ -142,6 +172,7 @@ body {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: all 0.15s ease-in;
+  opacity: 0;
 }
 .add-weight-button button i {
   color: white;
