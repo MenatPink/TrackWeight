@@ -153,6 +153,19 @@ body {
 .add-weight-button button:hover i {
   color: #f9686f;
 }
+.add-weight-button button:active {
+  outline: none;
+}
+.add-weight-button button:visited {
+  outline: none;
+}
+.add-weight-button button:focus {
+  background-color: white;
+  outline: none;
+}
+.add-weight-button button:focus i {
+  color: #f9686f;
+}
 
 .graph svg {
   margin: auto;
@@ -161,6 +174,7 @@ body {
 }
 .graph .svg-circles {
   fill: #f9686f;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=App.css.map */

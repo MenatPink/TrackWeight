@@ -12,6 +12,7 @@ const dataMax = Math.max(...data);
 let graphHeight = 1000;
 let graphWidth = 900;
 const graphOffset = 5;
+var selectedDate;
 
 function map(num, in_min, in_max, out_min, out_max) {
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
@@ -37,31 +38,39 @@ class Graph extends React.Component {
       })
       .attr("cy", 0)
       .transition()
-      .duration(100)
+      .duration(3000)
       .delay((d, i) => {
         return i * variance;
       })
       .ease(d3.easePolyOut)
+      .attr("num", (d, i) => {
+        return i
+      })
       .attr("cy", (d, i) => {
         let mapD = map(d, 0, dataMax, graphOffset, graphHeight - 20);
-        console.log(dataMax);
-        console.log(mapD, i);
         return mapD;
       })
       .attr("r", d => {
         return d;
       });
-    // .on("click", () => {
-    //   console.log("I the man you the van")
-    // });
 
-    d3.selectAll(circle).on("mouseover", function() {
-      console.log("You just clicked this");
-    });
+    const svgCircles = document.querySelectorAll(".svg-circles");
+    for (var i = 0; i < svgCircles.length; i++) {
+      svgCircles[i].addEventListener("click", (e) => {
+        svgCircles.forEach(function (i) {
+          i.style.fill = "rgba(249, 104, 111, 1)"
+        });
+        let svg = e.target;
+        svg.style.fill = '#3fc7fa';
+        selectedDate = e.target.getAttribute('num');
+      })
+    }
+
+
   }
 
   render() {
-    return <div className="graph" />;
+    return <div className = "graph" / > ;
   }
 }
 
