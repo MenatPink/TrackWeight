@@ -31,23 +31,49 @@ class App extends Component {
   }
 
   submitData() {
-    //grab the value of input
-    console.log(this.entryData);
-    //add it to the main state under todays date
-    this.setState({
-      weightEntry: {
-        date: this.entryData
+    const invalidInputText = document.querySelector(".invalid-input");
+    let dataGood = true;
+    let res = this.entryData;
+    let resArr = res.split("");
+    console.log(resArr);
+    resArr.forEach(i => {
+      if (
+        i === "1" ||
+        i === "2" ||
+        i === "3" ||
+        i === "4" ||
+        i === "5" ||
+        i === "6" ||
+        i === "7" ||
+        i === "8" ||
+        i === "9" ||
+        i === "0"
+      ) {
+        parseInt(i);
+        console.log(i);
+      } else {
+        console.log(`the ${i} should not be here`);
+        dataGood = false;
+        invalidInputText.style.width = "300px";
       }
     });
-    //close the button and input
-    const dataEntry = document.querySelector(".data-entry");
-    const submitDataButton = document.getElementById("submitData");
-    dataEntry.style.width = "0px";
-    dataEntry.style.paddingLeft = "0px";
-    submitDataButton.style.opacity = 0;
-    setTimeout(() => {
-      dataEntry.value = "";
-    }, 1000);
+    if (dataGood) {
+      this.setState({
+        weightEntry: {
+          date: this.entryData
+        }
+      });
+      //close the button and input
+      const dataEntry = document.querySelector(".data-entry");
+      const submitDataButton = document.getElementById("submitData");
+      invalidInputText.style.width = "0px";
+      dataEntry.style.width = "0px";
+      dataEntry.style.paddingLeft = "0px";
+      submitDataButton.style.opacity = 0;
+      setTimeout(() => {
+        dataEntry.value = "";
+      }, 1000);
+    }
   }
 
   render() {

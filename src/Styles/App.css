@@ -161,6 +161,19 @@ body {
 .add-weight-button input:focus {
   outline: none;
 }
+.add-weight-button .invalid-input {
+  text-align: center;
+  color: #f9686f;
+  width: 0px;
+  margin: auto;
+  display: block;
+  overflow: hidden;
+  transition: all ease-in-out 1s;
+}
+.add-weight-button .invalid-input p {
+  display: inline-block;
+  width: 300px;
+}
 .add-weight-button button {
   width: 100px;
   height: 100px;
