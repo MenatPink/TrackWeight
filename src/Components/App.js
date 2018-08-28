@@ -5,6 +5,7 @@ import TitleBar from "./TitleBar";
 import WeightTile from "./WeightTile";
 import Calendar from "rc-calendar";
 import Menu from "./Menu";
+import Graph from "./Graph";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <Calendar showWeekNumber={false} />
         </div>
         <Menu />
+        <Graph />
       </div>
     );
   }

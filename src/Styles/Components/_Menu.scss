@@ -1,7 +1,7 @@
 .add-weight-button {
   width: 100%;
   margin-top: 90px;
-  height: 200px;
+  height: 100px;
   button {
     width: 100px;
     height: 100px;
@@ -12,9 +12,16 @@
     border: none;
     box-shadow: $default-box-shadow;
     cursor: pointer;
+    transition: all 0.15s ease-in;
     i {
       color: white;
       font-size: 2rem;
+    }
+    &:hover {
+      background-color: white;
+      i {
+        color: $red;
+      }
     }
   }
 }

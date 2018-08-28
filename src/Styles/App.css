@@ -19,8 +19,9 @@ body {
 
 .view-wrapper {
   background-color: #f1f2f6;
-  height: 1200px;
+  height: auto;
   padding: 0;
+  padding-bottom: 100px;
 }
 
 .weight-tile {
@@ -128,7 +129,7 @@ body {
 .add-weight-button {
   width: 100%;
   margin-top: 90px;
-  height: 200px;
+  height: 100px;
 }
 .add-weight-button button {
   width: 100px;
@@ -140,10 +141,26 @@ body {
   border: none;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  transition: all 0.15s ease-in;
 }
 .add-weight-button button i {
   color: white;
   font-size: 2rem;
+}
+.add-weight-button button:hover {
+  background-color: white;
+}
+.add-weight-button button:hover i {
+  color: #f9686f;
+}
+
+.graph svg {
+  margin: auto;
+  display: block;
+  background-color: transparent;
+}
+.graph .svg-circles {
+  fill: #f9686f;
 }
 
 /*# sourceMappingURL=App.css.map */
