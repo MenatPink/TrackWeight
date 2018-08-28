@@ -24,6 +24,9 @@ class Menu extends Component {
             this.props.checkState(e);
           }}
         />
+        <div className="invalid-input">
+          <p>Your input is invalid</p>
+        </div>
         <button
           id="submitData"
           onClick={() => {

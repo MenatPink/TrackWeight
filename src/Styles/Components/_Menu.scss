@@ -28,6 +28,19 @@
       outline: none;
     }
   }
+  .invalid-input {
+    text-align: center;
+    color: $red;
+    width: 0px;
+    margin: auto;
+    display: block;
+    overflow: hidden;
+    transition: all ease-in-out 1s;
+    p {
+      display: inline-block;
+      width: 300px;
+    }
+  }
   button {
     width: 100px;
     height: 100px;
