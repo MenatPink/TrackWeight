@@ -13,9 +13,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: {
-        formatData: " 3 "
-      }
+      "0182018": "23",
+      "0282018": "24",
+      "0382018": "25",
+      "0482018": "26",
+      "0582018": "27"
     };
     this.findDate = this.findDate.bind(this);
   }
@@ -117,7 +119,7 @@ class App extends Component {
             this.submitData();
           }}
         />
-        <Graph />
+        <Graph data={this.state} />
       </div>
     );
   }
