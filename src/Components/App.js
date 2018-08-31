@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import reactDOM from "react-dom";
 import "./../Styles/App.css";
 import "rc-calendar/assets/index.css";
 import TitleBar from "./TitleBar";
@@ -7,15 +6,18 @@ import WeightTile from "./WeightTile";
 import Calendar from "rc-calendar";
 import Menu from "./Menu";
 import Graph from "./Graph";
+import update from "immutability-helper";
+import { brush } from "../../node_modules/d3-brush";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      weightEntry: {
-        date: ""
+      date: {
+        formatData: " 3 "
       }
     };
+    this.findDate = this.findDate.bind(this);
   }
 
   entryData;
@@ -30,12 +32,37 @@ class App extends Component {
     }
   }
 
+  currentDate;
+  formatDate;
+  findDate = value => {
+    const format = "DD-M-YYYY";
+    let date = value.format(format);
+    this.formatDate = date.replace(/-/gi, "");
+    let newDateEntry = {};
+    newDateEntry[this.formatDate] = "-";
+    return newDateEntry;
+  };
+
+  addDateToState = value => {
+    var date = this.findDate(value);
+    if (
+      this.state[this.formatDate] === "-" ||
+      this.state[this.formatDate] === undefined
+    ) {
+      var newState = update(this.state, { $merge: date });
+      this.setState(newState, () => {
+        this.currentDate = date;
+      });
+    } else {
+      this.setState(this.state);
+    }
+  };
+
   submitData() {
     const invalidInputText = document.querySelector(".invalid-input");
     let dataGood = true;
     let res = this.entryData;
     let resArr = res.split("");
-    console.log(resArr);
     resArr.forEach(i => {
       if (
         i === "1" ||
@@ -47,22 +74,20 @@ class App extends Component {
         i === "7" ||
         i === "8" ||
         i === "9" ||
-        i === "0"
+        i === "0" ||
+        i === "."
       ) {
         parseInt(i);
-        console.log(i);
       } else {
-        console.log(`the ${i} should not be here`);
         dataGood = false;
         invalidInputText.style.width = "300px";
       }
     });
     if (dataGood) {
-      this.setState({
-        weightEntry: {
-          date: this.entryData
-        }
-      });
+      let obj = {};
+      obj[this.formatDate] = res;
+      this.setState(obj, () => {});
+
       //close the button and input
       const dataEntry = document.querySelector(".data-entry");
       const submitDataButton = document.getElementById("submitData");
@@ -80,9 +105,9 @@ class App extends Component {
     return (
       <div className="container view-wrapper">
         <TitleBar />
-        <WeightTile date={this.state.weightEntry.date} />
+        <WeightTile date={this.state[this.formatDate]} />
         <div className="calendar-wrapper">
-          <Calendar showWeekNumber={false} />
+          <Calendar onSelect={this.addDateToState} showWeekNumber={false} />
         </div>
         <Menu
           checkState={e => {
