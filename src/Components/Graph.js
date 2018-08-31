@@ -2,31 +2,31 @@ import React from "react";
 import * as d3 from "d3";
 
 const variance = 20;
-const data = [];
-(function dataPush() {
-  for (let i = 0; i < 250; i++) {
-    data.push(Math.floor(Math.random() * variance));
-  }
-})();
+let data = [];
 const dataMax = Math.max(...data);
 let graphHeight = 1000;
 let graphWidth = 900;
 const graphOffset = 5;
 var selectedDate;
+let newDate;
 
 function map(num, in_min, in_max, out_min, out_max) {
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
 }
 
 class Graph extends React.Component {
-  componentDidMount() {
+  drawSvg(state) {
+    newDate = state;
+    data = [];
+    for (var key in newDate) {
+      data.push(newDate[key]);
+    }
     d3.select(".graph")
       .append("svg")
       .attr("width", graphWidth)
       .attr("height", graphHeight);
 
-    let circle = d3
-      .select("svg")
+    d3.select("svg")
       .selectAll("circle")
       .data(data)
       .enter()
@@ -44,7 +44,7 @@ class Graph extends React.Component {
       })
       .ease(d3.easePolyOut)
       .attr("num", (d, i) => {
-        return i
+        return i;
       })
       .attr("cy", (d, i) => {
         let mapD = map(d, 0, dataMax, graphOffset, graphHeight - 20);
@@ -56,21 +56,33 @@ class Graph extends React.Component {
 
     const svgCircles = document.querySelectorAll(".svg-circles");
     for (var i = 0; i < svgCircles.length; i++) {
-      svgCircles[i].addEventListener("click", (e) => {
-        svgCircles.forEach(function (i) {
-          i.style.fill = "rgba(249, 104, 111, 1)"
+      svgCircles[i].addEventListener("click", e => {
+        svgCircles.forEach(function(i) {
+          i.style.fill = "rgba(249, 104, 111, 1)";
         });
         let svg = e.target;
-        svg.style.fill = '#3fc7fa';
-        selectedDate = e.target.getAttribute('num');
-      })
+        svg.style.fill = "#3fc7fa";
+        selectedDate = e.target.getAttribute("num");
+      });
     }
+  }
+  redrawSvg() {
+    const context = d3.select("svg");
+    context.remove();
+    newDate = [];
+    this.drawSvg(this.props.data);
+  }
 
+  componentDidMount() {
+    this.drawSvg(this.props.data);
+  }
 
+  componentDidUpdate() {
+    this.redrawSvg();
   }
 
   render() {
-    return <div className = "graph" / > ;
+    return <div className="graph" />;
   }
 }
 
