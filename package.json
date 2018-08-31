@@ -5,6 +5,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "d3": "^5.5.0",
+    "immutability-helper": "^2.7.1",
+    "jshint": "^2.9.6",
     "rc-calendar": "^9.7.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
