@@ -1,7 +1,8 @@
 .add-weight-button {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
   height: auto;
+
   h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -9,10 +10,12 @@
     font-size: 3rem;
     cursor: pointer;
     transition: all ease-in-out 0.25s;
+
     &:hover {
       color: $lightblue;
     }
   }
+
   input {
     width: 0px;
     height: 50px;
@@ -24,10 +27,12 @@
     margin-bottom: 20px;
     transition: all 1s ease-in-out;
     font-size: 1.2rem;
+
     &:focus {
       outline: none;
     }
   }
+
   .invalid-input {
     text-align: center;
     color: $red;
@@ -36,11 +41,13 @@
     display: block;
     overflow: hidden;
     transition: all ease-in-out 1s;
+
     p {
       display: inline-block;
       width: 300px;
     }
   }
+
   button {
     width: 100px;
     height: 100px;
@@ -53,25 +60,32 @@
     cursor: pointer;
     transition: all 0.15s ease-in;
     opacity: 0;
+
     i {
       color: white;
       font-size: 2rem;
     }
+
     &:hover {
       background-color: white;
+
       i {
         color: $red;
       }
     }
+
     &:active {
       outline: none;
     }
+
     &:visited {
       outline: none;
     }
+
     &:focus {
       background-color: white;
       outline: none;
+
       i {
         color: $red;
       }

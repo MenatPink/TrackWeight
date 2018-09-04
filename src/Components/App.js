@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, {
+  Component
+} from "react";
 import "./../Styles/App.css";
 import "rc-calendar/assets/index.css";
 import TitleBar from "./TitleBar";
@@ -7,17 +9,19 @@ import Calendar from "rc-calendar";
 import Menu from "./Menu";
 import Graph from "./Graph";
 import update from "immutability-helper";
-import { brush } from "../../node_modules/d3-brush";
+import {
+  brush
+} from "../../node_modules/d3-brush";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      "0182018": "23",
-      "0282018": "24",
-      "0382018": "25",
-      "0482018": "26",
-      "0582018": "27"
+      // "0182018": "23",
+      // "0282018": "24",
+      // "0382018": "25",
+      // "0482018": "26",
+      // "0582018": "27"
     };
     this.findDate = this.findDate.bind(this);
   }
@@ -51,7 +55,9 @@ class App extends Component {
       this.state[this.formatDate] === "-" ||
       this.state[this.formatDate] === undefined
     ) {
-      var newState = update(this.state, { $merge: date });
+      var newState = update(this.state, {
+        $merge: date
+      });
       this.setState(newState, () => {
         this.currentDate = date;
       });
@@ -104,23 +110,41 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="container view-wrapper">
-        <TitleBar />
-        <WeightTile date={this.state[this.formatDate]} />
-        <div className="calendar-wrapper">
-          <Calendar onSelect={this.addDateToState} showWeekNumber={false} />
-        </div>
-        <Menu
-          checkState={e => {
-            this.checkState(e);
-          }}
-          submitData={() => {
-            this.submitData();
-          }}
-        />
-        <Graph data={this.state} />
-      </div>
+    return ( <
+      div className = "container view-wrapper" >
+      <
+      TitleBar / >
+      <
+      WeightTile date = {
+        this.state[this.formatDate]
+      }
+      /> <
+      div className = "calendar-wrapper" >
+      <
+      Calendar onSelect = {
+        this.addDateToState
+      }
+      showWeekNumber = {
+        false
+      }
+      /> <
+      /div> <
+      Menu checkState = {
+        e => {
+          this.checkState(e);
+        }
+      }
+      submitData = {
+        () => {
+          this.submitData();
+        }
+      }
+      /> <
+      Graph data = {
+        this.state
+      }
+      /> <
+      /div>
     );
   }
 }

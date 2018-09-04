@@ -132,7 +132,7 @@ body {
 
 .add-weight-button {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
   height: auto;
 }
 .add-weight-button h2 {
@@ -213,11 +213,11 @@ body {
 
 .graph svg {
   margin: auto;
+  margin-top: 20px;
   display: block;
-  background-color: transparent;
+  background-color: #c8c8c8;
 }
 .graph .svg-circles {
-  fill: #f9686f;
   cursor: pointer;
 }
 
